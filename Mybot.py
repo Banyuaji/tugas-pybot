@@ -34,16 +34,16 @@ class MyBot:
             for x in data:
                 no += 1
                 kumpuldata = kumpuldata + str(x) + "\n"
-                print(kumpuldata)
-                kumpuldata = kumpuldata.replace('(', '')
+                kumpuldata = kumpuldata.replace('(', str(no) + '. ')
                 kumpuldata = kumpuldata.replace(')', '')
                 kumpuldata = kumpuldata.replace("'", '')
                 kumpuldata = kumpuldata.replace(",", '')
+                print(kumpuldata)
         else:
             print('data kosong')
 
         mybot.reply_to(message, str(kumpuldata))
 
-print("Bot sudah berjalan bro...")
+print("Bot sudah jalan bro...")
 mybot.polling(none_stop=True)
 
